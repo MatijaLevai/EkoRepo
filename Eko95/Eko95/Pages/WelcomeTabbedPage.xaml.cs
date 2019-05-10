@@ -17,27 +17,43 @@ namespace Eko95.Pages
             InitializeComponent();
         }
 
-        private void Login_Clicked(object sender, EventArgs e)
+        private async void Login_Clicked(object sender, EventArgs e)
         {
-            if (LoginMail.Text != null && LoginPass.Text != null)
+            try
             {
-                string m = LoginMail.Text;
-                string p = LoginPass.Text;
+                if (LoginMail.Text != null && LoginPass.Text != null && string.IsNullOrWhiteSpace(Mail.Text) && string.IsNullOrWhiteSpace(Pass.Text))
+                {
+                    string m = LoginMail.Text;
+                    string p = LoginPass.Text;
+                    if (m == "kuri@eko.com" && p == "pass")
+                    {await Navigation.PushAsync(new Page()); }
+                    else if (m == "dispatch@eko.com" && p == "pass")
+                    { await Navigation.PushAsync(new Page()); }
+                    else if (m == "user@eko.com" && p == "pass")
+                    {
+                        var page = new EndUserWelcomePage();
+                        await Navigation.PushAsync(page);
+                       
+                    }
+                }
             }
-            else DisplayAlert("Atention!","Please enter email and password correctly.","ok?");
+            catch {await DisplayAlert("Atention!", "Please enter email and password correctly.", "ok?"); }
         }
 
         private void Register_Clicked(object sender, EventArgs e)
         {
-            if (Mail.Text != null && Pass.Text != null )
+
+           if (Name.Text != null && Phone != null && Mail.Text != null && Pass.Text != null && string.IsNullOrWhiteSpace(Name.Text) && string.IsNullOrWhiteSpace(Phone.Text) && string.IsNullOrWhiteSpace(Mail.Text) && string.IsNullOrWhiteSpace(Pass.Text))
             {
                 if (PassConfirm.Text == Pass.Text)
-                {
+                { 
+                    string name = Name.Text;
+                    string phone = Phone.Text;
                     string mail = Mail.Text;
                     string pass = Pass.Text;
                 }
             }
-            else DisplayAlert("Atention!", "Please enter email and password correctly.", "ok?");
+            else DisplayAlert("Atention!", "Please fill Entrys correctly.", "ok?");
 
         }
     }

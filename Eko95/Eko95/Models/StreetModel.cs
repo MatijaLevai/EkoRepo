@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Eko95.Models
 {
-    class AddresModel
+    public class StreetModel
     {
-      
+        public string Name { get; set; }
+
     }
 }
