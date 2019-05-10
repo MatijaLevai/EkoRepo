@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Eko95.Pages.WelcomeTabbedPage">
+  <!--Pages can be added as references or inline-->
+
+    <ContentPage Title="Register" >
+        <ContentPage.Content>
+            <StackLayout>
+                <Label Text="Welcome to EkoKurirApp. Register to continue."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+                <Entry x:Name="Name" Placeholder="___________   Name    __________"  VerticalOptions="Center" 
+                HorizontalOptions="Center"></Entry>
+                <Entry x:Name="Phone" Placeholder="________Phone Number________"  VerticalOptions="Center" 
+                HorizontalOptions="Center"></Entry>
+                <Entry x:Name="Mail" Placeholder="____________ E-mail ____________"  VerticalOptions="Center" 
+                HorizontalOptions="Center"></Entry>
+                <Entry x:Name="Pass" IsPassword="true" Placeholder="__________  Password  __________"  VerticalOptions="Center" 
+                HorizontalOptions="Center"></Entry>
+                <Entry x:Name="PassConfirm" IsPassword="true" Placeholder="_______Confirm Password_______" VerticalOptions="Center" 
+                HorizontalOptions="Center"></Entry>
+                <Button x:Name="Register" Text=" Register " BackgroundColor="ForestGreen" Clicked="Register_Clicked"  VerticalOptions="Center" 
+                HorizontalOptions="Center"></Button>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Login">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions="Fill" 
+                HorizontalOptions="Fill">
+                <Label Text="Welcome to EkoKurirApp. Login to continue."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+                <Entry x:Name="LoginMail" Placeholder="__________  E-mail   __________"  VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand"></Entry>
+                <Entry x:Name="LoginPass" IsPassword="true" Placeholder="________  Password   ________"  VerticalOptions="Center" 
+                HorizontalOptions="Center"></Entry>
+                <Button x:Name="Login" Text=" Login " BackgroundColor="ForestGreen" Clicked="Login_Clicked"  VerticalOptions="Center" 
+                HorizontalOptions="Center"></Button>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Eko95"
+             x:Class="Eko95.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to EkoKurirApp. Register to continue."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        <Entry x:Name="Name" Placeholder="Full Name"></Entry>
+        <Entry x:Name="Phone" Placeholder="PhoneNumber"></Entry>
+        <Entry x:Name="mail" Placeholder="E-mail"></Entry>
+        <Entry x:Name="pass" IsPassword="true" Placeholder="Password"></Entry>
+        <Entry x:Name="passConfirm" IsPassword="true" Placeholder="Confirm Password"></Entry>
+    </StackLayout>
+
+</ContentPage>

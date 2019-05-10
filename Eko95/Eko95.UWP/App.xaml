@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Eko95.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Eko95.UWP"
+    RequestedTheme="Light">
+
+</Application>
