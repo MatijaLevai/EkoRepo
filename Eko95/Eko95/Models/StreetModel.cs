@@ -7,6 +7,7 @@ namespace Eko95.Models
     public class StreetModel
     {
         public string Name { get; set; }
+        public List<string> PossibleBuildingsNumbers { get; set; }
 
     }
 }

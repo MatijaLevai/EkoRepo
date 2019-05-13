@@ -11,7 +11,8 @@ namespace Eko95
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new WelcomeTabbedPage());
+            MainPage = new EndUserWelcomePage();
+                //new NavigationPage(new WelcomeTabbedPage());
 
         }
 

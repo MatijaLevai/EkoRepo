@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,13 +32,23 @@ namespace Eko95.Pages
                     { await Navigation.PushAsync(new Page()); }
                     else if (m == "user@eko.com" && p == "pass")
                     {
-                        var page = new EndUserWelcomePage();
-                        await Navigation.PushAsync(page);
+                        EndUserWelcomePage page = new EndUserWelcomePage();
+                       
+                        try {
+                            //await Navigation.PushAsync(page,true);
+                            // Formsflags
+                            //  await Navigation.PushModalAsync(page,true);
+                            //page.Focus();
+                            //this.Unfocus();
+                           
+                        }
+                        catch(Exception ex) {await DisplayAlert("Atention!",ex.Message, "Ok."); }
                        
                     }
                 }
             }
-            catch {await DisplayAlert("Atention!", "Please enter email and password correctly.", "ok?"); }
+            catch (Exception ex) { await DisplayAlert("Atention!", ex.Message, "Ok."); }
+            //catch {await DisplayAlert("Atention!", "Please enter email and password correctly.", "ok?"); }
         }
 
         private void Register_Clicked(object sender, EventArgs e)

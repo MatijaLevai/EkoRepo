@@ -16,17 +16,32 @@
                 <Entry x:Name="PhoneEnd" Placeholder="Phone Number of person whom  courier will give the package."  VerticalOptions="Center" HorizontalOptions="Center"></Entry>
 
                 <Label Text="Start Addres"/>
-
-                <ListView x:Name="Streets" ItemsSource=""></ListView>
+                <ListView x:Name="list"  ItemsSource="{Binding StreetsOfNS}" ItemTapped="List_ItemTapped"  RowHeight="55" VerticalScrollBarVisibility="Always">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" LineBreakMode="TailTruncation"></Label>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
                 <Label Text="End Addres"/>
-
+                
 
                 <Button x:Name="OrderDelivery" Text="Order" BackgroundColor="ForestGreen" Clicked="OrderDelivery_Clicked"  VerticalOptions="Center" 
                 HorizontalOptions="Center"></Button>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title="Tab 2">
-        
+    <ContentPage Title="Map">
+       
     </ContentPage>
 </TabbedPage>

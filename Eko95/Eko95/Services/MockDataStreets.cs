@@ -9,7 +9,7 @@ namespace Eko95.Services
         public static List<StreetModel> StreetsOfNS = new List<StreetModel>()
             {
                 #region uliceNS
-               new StreetModel {  Name="Bulevar oslobođenja"},
+               new StreetModel {  Name="Bulevar oslobođenja",PossibleBuildingsNumbers=new List<string>{"0","2","4","4a","4b","6","8","10","12","14","16","18","20","22","24","26","28","30","30a","30b","32","34","36","38" } },
                new StreetModel {  Name= "Bulevar Jaše Tomića" },
                new StreetModel {  Name= "Bulevar kralja Petra I" },
                new StreetModel {  Name= "Bulevar cara Lazara" },

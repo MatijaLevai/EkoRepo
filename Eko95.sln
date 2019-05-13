@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eko95.UWP", "Eko95\Eko95.UW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eko95.Android", "Eko95\Eko95.Android\Eko95.Android.csproj", "{75600AB5-1BE7-4EF6-990B-CFA57E0BE2CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eko95", "Eko95\Eko95\Eko95.csproj", "{BD6BD710-0671-48B2-80C9-F482A8425EBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eko95", "Eko95\Eko95\Eko95.csproj", "{BD6BD710-0671-48B2-80C9-F482A8425EBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiCore", "WebApiCore\WebApiCore.csproj", "{84AC2C7C-F0C8-4E17-A1FF-86DEA151243C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiCore", "WebApiCore\WebApiCore.csproj", "{84AC2C7C-F0C8-4E17-A1FF-86DEA151243C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
