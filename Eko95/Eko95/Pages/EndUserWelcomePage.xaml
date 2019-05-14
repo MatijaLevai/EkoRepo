@@ -1,47 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Eko95.Pages.EndUserWelcomePage">
+            xmlns:essentials="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
+            x:Class="Eko95.Pages.EndUserWelcomePage">
+    
   <!--Pages can be added as references or inline-->
     <ContentPage Title="Order delivery." >
         <ContentPage.Content>
             <StackLayout>
-                <Label Text="Welcome to EkoKurirApp. Create delivery and order it."
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-                <Entry x:Name="NameStart" Placeholder="Name of person from who courier will pick up package."  VerticalOptions="Center"  HorizontalOptions="Center"></Entry>
-                <Entry x:Name="PhoneStart" Placeholder="Phone Number of person from who courier will pick up package."  VerticalOptions="Center"  HorizontalOptions="Center"></Entry>
-
-                <Entry x:Name="NameEnd" Placeholder="Name of person whom  courier will give the package."  VerticalOptions="Center" HorizontalOptions="Center"></Entry>
-                <Entry x:Name="PhoneEnd" Placeholder="Phone Number of person whom  courier will give the package."  VerticalOptions="Center" HorizontalOptions="Center"></Entry>
-
+                <Label Text="Welcome to EkoKurirApp. Create delivery and order it." VerticalOptions="Center"  HorizontalOptions="Start" />
+                <FlexLayout></FlexLayout>
+                <Entry x:Name="NameStart" Placeholder="Name of person from who courier will pick up package."  VerticalOptions="Center"  HorizontalOptions="Start"></Entry>
+                <Entry x:Name="PhoneStart" Placeholder="Phone Number of person from who courier will pick up package."  VerticalOptions="Center"  HorizontalOptions="Start"></Entry>
                 <Label Text="Start Addres"/>
-                <ListView x:Name="list"  ItemsSource="{Binding StreetsOfNS}" ItemTapped="List_ItemTapped"  RowHeight="55" VerticalScrollBarVisibility="Always">
+                <ListView x:Name="listStartAddres"  ItemsSource="{Binding StreetsOfNS}" ItemTapped="ListStartAddres_ItemTapped"  RowHeight="35" VerticalScrollBarVisibility="Always" HorizontalOptions="Start">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid Padding="5">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="20"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" LineBreakMode="TailTruncation"></Label>
+                                <Grid Padding="3" >
+                                    <Label Grid.Row="0" FontSize="Small" Grid.Column="0" Text="{Binding Name}" LineBreakMode="TailTruncation"></Label>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Label Text="End Addres"/>
+                <Entry x:Name="StartAddresBuildingNumber" Placeholder="Enter start addres building number"  HorizontalOptions="Start"></Entry>
+         
+                <Entry x:Name="NameEnd" Placeholder="Name of person whom  courier will give the package."  VerticalOptions="Center" HorizontalOptions="Start"></Entry>
+                    <Entry x:Name="PhoneEnd" Placeholder="Phone Number of person whom  courier will give the package."  VerticalOptions="Center" HorizontalOptions="Start"></Entry>
+                    <Label Text="End Addres"/>
+                    <ListView x:Name="listEndAddres"  ItemsSource="{Binding StreetsOfNS}" ItemTapped="ListEndAddres_ItemTapped"  RowHeight="35" VerticalScrollBarVisibility="Always" HorizontalOptions="Start">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Padding="3" >
+                                        <Label Grid.Row="0" FontSize="Small" Grid.Column="0" Text="{Binding Name}" LineBreakMode="TailTruncation"></Label>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Entry x:Name="EndAddresBuildingNumber" Placeholder="Enter end addres building number"  HorizontalOptions="Start"></Entry>
                 
-
-                <Button x:Name="OrderDelivery" Text="Order" BackgroundColor="ForestGreen" Clicked="OrderDelivery_Clicked"  VerticalOptions="Center" 
-                HorizontalOptions="Center"></Button>
-            </StackLayout>
+                <Button x:Name="OrderDelivery" Text="Order" BackgroundColor="ForestGreen" Clicked="OrderDelivery_Clicked"  VerticalOptions="Center" HorizontalOptions="Start"></Button>
+                </StackLayout>
         </ContentPage.Content>
     </ContentPage>
     <ContentPage Title="Map">
-       
+        <maps:SfMaps>
+            <maps:SfMaps.Layers>
+                <maps:ImageryLayer LayerType="OSM" ></maps:ImageryLayer>
+            </maps:SfMaps.Layers>
+        </maps:SfMaps>
     </ContentPage>
 </TabbedPage>

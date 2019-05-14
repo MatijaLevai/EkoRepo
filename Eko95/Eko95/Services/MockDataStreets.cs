@@ -4,6 +4,7 @@ using System.Text;
 using Eko95.Models;
 namespace Eko95.Services
 {
+    //PuklaGumaSifra
     public class MockDataStreets
     {
         public static List<StreetModel> StreetsOfNS = new List<StreetModel>()
